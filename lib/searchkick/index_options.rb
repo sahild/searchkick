@@ -69,7 +69,7 @@ module Searchkick
             },
             searchkick_word_search: {
               type: "custom",
-              tokenizer: "standard",
+              tokenizer: "punctuation_tokenizer",
               filter: ["lowercase", "asciifolding"]
             },
             searchkick_suggest_index: {
@@ -146,6 +146,12 @@ module Searchkick
             ampersand: {
               type: "mapping",
               mappings: ["&=> and "]
+            }
+          },
+          tokenizer: {
+            punctuation_tokenizer: {
+              type: "pattern",
+              pattern: "(\\s+)"  // splits only on whitespace
             }
           }
         }
