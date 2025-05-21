@@ -69,7 +69,7 @@ module Searchkick
             },
             searchkick_word_search: {
               type: "custom",
-              tokenizer: "standard",
+              tokenizer: "punctuation_tokenizer",
               filter: ["lowercase", "asciifolding"]
             },
             searchkick_suggest_index: {
